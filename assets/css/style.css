@@ -336,8 +336,8 @@ button {
   display: block;
   text-decoration: none;
   cursor: pointer;
-  background-color:　#1a9259;
-  color: #fff;
+  background-color：　#1a9259;
+  color:　#fff;
   font-size: 24px;
   line-height: 1.54167;
   text-align: center;
@@ -453,7 +453,7 @@ button {
 }
 
 .clear-message {
-  background-color: #fffefc;
+  background-color: #ffffff;
   padding: 30px 30px 60px;
   position: relative;
 }
