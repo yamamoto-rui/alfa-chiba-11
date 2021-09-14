@@ -117,7 +117,7 @@ Youtube貼り付けここまで -->
           </div>
           <div class="stage-column__container section bg-color--keycolor">
             <div class="container">
-              <h2 class="section-title"><span class="section-title__stage">STAGE：2</span>解答</h2>
+              <h2 class="section-title"><span class="section-title__stage">STAGE：2-1</span>解答</h2>
               <!-------------------------------------------------------------
                 class名"row"内のclass名"column"が横並びになります。
                 改行する場合は以下のように追加してください。
@@ -145,12 +145,18 @@ Youtube貼り付けここまで -->
 
 
 
-                <div class="column">
+           <section class="section">
+           <div class="container">
+
 
                   <figure class="image__container">
                     <img src="assets/images/御守り.png" alt="">
                   </figure>
-
+          </div>
+        </section>
+        <section class="section bg-color--keycolor">
+          <div class="container">
+            <h2 class="section-title"><span class="section-title__stage">STAGE：2-2</span>解答</h2>
                   <answer-input v-bind:correct="correctAnswer['stage2']['q2']" v-on:answer-input="answerInput($event, 'stage2', 2)"></answer-input>
                   <a class="link-hint" href="hint2.html" target="hint2">ヒントをみる ></a>
                 　
@@ -158,14 +164,17 @@ Youtube貼り付けここまで -->
 
 
                   
-
-
-                <div class="column">
+          <section class="section">
+          <div class="container">
 
                   <figure class="image__container">
                     <img src="assets/images/stage.png" alt="">
                   </figure>
-
+ </div>
+        </section>
+        <section class="section bg-color--keycolor">
+          <div class="container">
+            <h2 class="section-title"><span class="section-title__stage">STAGE：2-3</span>解答</h2>
                   <answer-input v-bind:correct="correctAnswer['stage2']['q3']" v-on:answer-input="answerInput($event, 'stage2', 3)"></answer-input>
                   <a class="link-hint" href="hint2.html" target="hint2">ヒントをみる ></a>
 
