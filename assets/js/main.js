@@ -33,8 +33,8 @@ const app = Vue.createApp({
       },
        stage4: {
           q1: 'いなり',
-          // q2: 'えええ',
-          // q3: 'おおお'
+          q2: 'えええ',
+          q3: 'おおお'
         },
 
       /* それぞれの問題が正解かどうか
@@ -51,8 +51,8 @@ const app = Vue.createApp({
         ],
         stage3: [
           false, // 3-1
-          // false, // 3-2
-          // false, // 3-3
+          false, // 3-2
+          false, // 3-3
         ],
         stage4: [
           false, // 4-1
