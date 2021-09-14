@@ -101,88 +101,69 @@ Youtube貼り付けここまで -->
       <!-- STAGE1　ここまで -->
 
       <!-- STAGE2　ここから -->
-      <!---------------------------------------------------------------------
-        クリア画面の「次のステージへ」ボタンをクリックしたら表示します。
-        v-if="next['stage1']"はnext['stage1']がtrueになったら表示します。
-      ----------------------------------------------------------------------->
       <div v-if="next['stage1']" id="sectionStage2" class="stage">
-        <section>
-          <div class="section">
-            <div class="container">
-              <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">STAGE：2</span>黒板に書かれている謎を解け！</h2>
-              <p class="text-center">家庭科室に入ることができた！<br>
-                すぐに目に入ったのは黒板にある４つの謎。<br>
-                これらを解くことで、きっと次のステップに繋がるはずだ！</p>
-            </div>
-          </div>
-          <div class="stage-column__container section bg-color--keycolor">
-            <div class="container">
-              <h2 class="section-title"><span class="section-title__stage">STAGE：2-1</span>解答</h2>
-              <!-------------------------------------------------------------
-                class名"row"内のclass名"column"が横並びになります。
-                改行する場合は以下のように追加してください。
-                <div class="row">
-                  <div class="column">
-                    ～ 内容 ～
-                  </div>
-                </div>
-              ------------------------------------------------------------->
-              </div>
 
-                <!-- STAGE2-1　ここから -->
-                </div>
-                  <!-- STAGE2-1問題セクション　ここから -->
-                  <figure class="image__container">
-                    <img src="assets/images/sahou.png" alt="">
-                  </figure>
-                  <!-- STAGE2-1問題セクション　ここまで -->
-                  <!-- STAGE2-1解答入力セクション　ここから -->
-                  <answer-input v-bind:correct="correctAnswer['stage2']['q1']" v-on:answer-input="answerInput($event, 'stage2', 1)"></answer-input>
-                  <a class="link-hint" href="hint2.html" target="hint2">ヒントをみる ></a>
-                  <!-- STAGE2-1解答入力セクション　ここまで -->
-                </div><!-- /.column -->
-                <!-- STAGE2-1　ここまで -->
-           
-                <section class="section">
-           <div class="container">
-                  <figure class="image__container">
-                    <img src="assets/images/御守り.png" alt="">
-                  </figure>
-                  <answer-input v-bind:correct="correctAnswer['stage2']['q2']" v-on:answer-input="answerInput($event, 'stage2', 2)"></answer-input>
-                  <a class="link-hint" href="hint2.html" target="hint2">ヒントをみる ></a>
-                　
-                </div>        
+        <!-- STAGE3-1問題セクション　ここから -->
+        <section class="section">
+          <div class="container">
+            <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">STAGE：2</span>家庭科室の課題とは</h2>
+            <p class="text-center">黒板から得たメッセージは、「食物の廃棄問題」だった。<br>
+              どうやら、廃棄にかかる費用がかかりすぎて小学校の運営が厳しくなったようだ。。<br>
+              これらを解決するための最後の謎を解いていこう！</p>
+            <figure class="image__container">
+              <img src="assets/images/御守り.png" alt="">
+            </figure>
+          </div>
+        </section>
+        <!-- STAGE2-1問題セクション　ここまで -->
+
+        <!-- STAGE2-1解答入力セクションここから -->
+        <section class="section bg-color--keycolor">
+          <div class="container">
+            <h2 class="section-title"><span class="section-title__stage">STAGE：2</span>解答　</h2>
+            <!-----------------------------------------------------------------------------------------------------------------
+              解答入力欄のコンポーネントです。
+              v-on:answer-input="answerInput($event, 'stage3', 1, 'final')" は送信ボタンをクリックした時の動作を決める関数です。
+              4番目の引数 'final' は最終ステージを表します。
+            ------------------------------------------------------------------------------------------------------------------>
+            <answer-input v-bind:correct="correctAnswer['stage2']['q1']" v-on:answer-input="answerInput($event, 'stage2', 1)"></answer-input>
+            <a class="link-hint" href="hint3.html" target="hint2">ヒントをみる ></a>
+          </div>
+        </section>
+        <!-- STAGE2-1解答入力セクション　ここまで -->
+
           <section class="section">
           <div class="container">
-                  <figure class="image__container">
-                    <img src="assets/images/stage.png" alt="">
-                  </figure>
-                  <answer-input v-bind:correct="correctAnswer['stage2']['q3']" v-on:answer-input="answerInput($event, 'stage2', 3)"></answer-input>
-                  <a class="link-hint" href="hint2.html" target="hint2">ヒントをみる ></a>
-
-                </div>
-
-
-
-              </div><!-- /.row -->
-
-            </div>
+            <figure class="image__container">
+              <img src="assets/images/stage.png" alt="">
+            </figure>
           </div>
         </section>
-
-        <!-- STAGE2クリア画面　ここから -->
-        <section v-if="clear['stage2']" v-bind:class="{isClear:clear['stage2']}"  class="section section--clear bg-color--gray">
+        <section class="section bg-color--keycolor">
           <div class="container">
-            <div class="clear-message">
-              <div class="clear-message__title">STAGE：2　正解！</div>
-              <div class="clear-message__content">黒板の指示に従い、<br>
-                次のステージの謎を解こう！</div>
-                <button v-on:click="nextStage('stage2')" onclick="location.href='#sectionStage3'" class="clear-message__btn btn">次のステージへ<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></button>
-            </div>
+            <h2 class="section-title"><span class="section-title__stage">STAGE：２</span>解答</h2>
+            <answer-input v-bind:correct="correctAnswer['stage3']['q2']" v-on:answer-input="answerInput($event, 'stage2', 2, 'final')"></answer-input>
+            <a class="link-hint" href="hint２.html" target="hint２">ヒントをみる ></a>
           </div>
         </section>
-        <!-- STAGE2クリア画面　ここまで -->
-      </div>
+      　　
+
+        <section class="section">
+          <div class="container">
+            <figure class="image__container">
+              <img src="assets/images/stage.png" alt="">
+            </figure>
+          </div>
+        </section>
+        <section class="section bg-color--keycolor">
+          <div class="container">
+            <h2 class="section-title"><span class="section-title__stage">STAGE：2</span>解答</h2>
+            <answer-input v-bind:correct="correctAnswer['stage2']['q3']" v-on:answer-input="answerInput($event, 'stage2', 3, 'final')"></answer-input>
+            <a class="link-hint" href="hint2.html" target="hint2">ヒントをみる ></a>
+          </div>
+        </section>     
+        
+        </div>
       <!-- STAGE2　ここまで -->
 
       <!-- STAGE3　ここから -->
@@ -258,51 +239,6 @@ STAGE3-3追加　ここまで -->
         
         </div>
       <!-- STAGE3　ここまで -->
-      
-      <!-- STAGE4　ここから -->
-      <div v-if="next['stage3']" id="sectionStage4" class="stage">
-        <section>  
-          <div class="section">
-            <div class="container">
-              <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">STAGE：4</span>黒板に書かれている謎を解け！</h2>
-              <p class="text-center">家庭科室に入ることができた！<br>
-                すぐに目に入ったのは黒板にある４つの謎。<br>
-                これらを解くことで、きっと次のステップに繋がるはずだ！</p>
-            </div>
-          </div>
-          <div class="stage-column__container section bg-color--keycolor">
-            <div class="container">
-              <h2 class="section-title"><span class="section-title__stage">STAGE：4</span>解答</h2>
-            
-              <div class="row">
-
-                <!-- STAGE4-1　ここから -->
-                <div class="column">
-                  <!-- STAGE4-1問題セクション　ここから -->
-                  <figure class="image__container">
-                    <img src="assets/images/sahou.png" alt="">
-                  </figure>
-                  <!-- STAGE4-1問題セクション　ここまで -->
-                  <!-- STAGE4-1解答入力セクション　ここから -->
-                  <answer-input v-bind:correct="correctAnswer['stage４']['q1']" v-on:answer-input="answerInput($event, 'stage4', 1)"></answer-input>
-                  <a class="link-hint" href="hint2.html" target="hint2">ヒントをみる ></a>
-                  <!-- STAGE4-1解答入力セクション　ここまで -->
-                </div><!-- /.column -->
-                <!-- STAGE4-1　ここまで -->
-                
-                 <!-- STAGE4クリア画面　ここから -->
-        <section v-if="clear['stage4']" v-bind:class="{isClear:clear['stage4']}"  class="section section--clear bg-color--gray">
-          <div class="container">
-            <div class="clear-message">
-              <div class="clear-message__title">STAGE：4　正解！</div>
-              <div class="clear-message__content">黒板の指示に従い、<br>
-                次のステージの謎を解こう！</div>
-                <button v-on:click="nextStage('stage4')" onclick="location.href='#sectionStage5'" class="clear-message__btn btn">次のステージへ<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></button>
-            </div>
-          </div>
-        </section>
-      </div>
-      <!-- STAGE4　ここまで -->
 
 
             </div>
